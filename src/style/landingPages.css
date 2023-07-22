@@ -1,0 +1,706 @@
+@import url("https://fonts.googleapis.com/css2?family=Azeret+Mono&family=Poppins:wght@300;400&family=Raleway:wght@500;700&display=swap");
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+:root {
+  --primary-color: #71685e;
+  --secondary-color: #c3b5a6;
+  --card-color: #f4eae0;
+  --font: "Poppins", sans-serif;
+}
+
+.navBrand {
+  font-family: "Poppins", sans-serif;
+  color: var(--card-color) !important;
+  font-size: 30px !important;
+  font-weight: 600 !important;
+}
+
+.navSpan {
+  font-weight: 700;
+  color: var(--secondary-color) !important;
+}
+
+.navLink {
+  font-family: "Raleway", sans-serif;
+  color: var(--card-color) !important;
+}
+
+.navItem {
+  font-family: "Raleway", sans-serif;
+  color: var(--primary-color) !important;
+}
+
+#navbarScrollingDropdown {
+  color: var(--card-color);
+}
+
+.navLink:hover {
+  color: var(--primary-color) !important;
+}
+
+.navLinkActive {
+  font-family: "Raleway", sans-serif;
+  color: var(--primary-color) !important;
+}
+
+.navSearch {
+  background-color: var(--card-color) !important;
+  border: 0 !important;
+  width: 100% !important;
+}
+
+/* .navbar-light .navbar-toggler {
+    border: 1px solid var(--secondary-color) !important;
+    object-fit: contain !important;
+} */
+
+.navbar-toggler-icon {
+  background: url("../assets/images/list.png") !important;
+  background-size: cover !important;
+  width: 30px !important;
+  height: 20px !important;
+}
+
+@media screen and (min-width: 0px) and (max-width: 1000px) {
+  .navbar-collapse.collapse.show {
+    background-color: #332d2d !important;
+    padding: 0 10px 10px 10px !important;
+    border-radius: 5px;
+  }
+  .navbar-collapse.collapsing {
+    background-color: #332d2d !important;
+    padding: 0 10px 10px 10px !important;
+    border-radius: 5px;
+  }
+}
+
+.navForm {
+  width: 30%;
+}
+
+@media only screen and (max-width: 500px) {
+  .navForm {
+    width: 100% !important;
+  }
+}
+
+.navButton {
+  background: var(--primary-color) !important;
+  color: var(--secondary-color);
+  border: 0 !important;
+  box-shadow: none !important;
+  font-weight: 500 !important;
+}
+
+.navButton:hover {
+  background: var(--secondary-color) !important;
+}
+
+.myBg {
+  height: 100vh;
+  width: 100%;
+  background: url("/src/assets/images/background/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.intro {
+  height: 300px;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  padding: 400px 0;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1;
+  text-shadow: 3px 3px 2px #000;
+}
+
+.row-button-next {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  justify-content: center;
+}
+
+.img-right {
+  width: auto;
+  height: 60%;
+}
+
+.col-button-next {
+  font-family: "Poppins", sans-serif;
+  padding: 10px 20px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: 0.5s;
+}
+
+.col-button-next:hover {
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+}
+
+#popular {
+  width: 100%;
+  height: auto;
+  background: url(/src/assets/images/background/trending.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 0 0 60px;
+  position: relative;
+}
+
+.title-section {
+  font-weight: 700;
+  color: var(--card-color);
+  padding: 30px 0 0;
+  text-align: left;
+}
+
+@media screen and (max-width: 768px) {
+  .title-section {
+    padding: 10px 0 0;
+    font-size: 18px;
+  }
+}
+
+.title-section::before {
+  content: "";
+  border-left: 8px solid #d2001a;
+  margin: 0 10px;
+}
+
+.top-left-text {
+  top: 0px;
+  left: 0px;
+  background-color: #d2001a;
+  position: absolute;
+  color: #fff;
+  font-size: 14px;
+  padding: 2px 10px;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 768px) {
+  .top-left-text {
+    font-size: 12px;
+    padding: 2px 6px;
+  }
+}
+
+.card {
+  max-width: 300px;
+  max-height: 350px !important;
+  position: relative;
+  border: 10px solid var(--card-color) !important;
+  border-radius: 0 !important;
+  overflow: hidden;
+  box-shadow: none !important;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #000;
+  opacity: 0;
+}
+
+.img-overlay {
+  position: absolute;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  color: #fff;
+  width: 90px;
+  height: auto;
+}
+
+.card:hover .overlay {
+  opacity: 0.8;
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+}
+
+.card:hover .image {
+  transition: all 0.5s ease-out;
+  transform: scale(1.1);
+}
+
+.card:hover .top-left-text {
+  position: absolute;
+  top: 0;
+  z-index: 3;
+}
+
+.movie-bottom {
+  background-color: var(--card-color);
+  width: 300px;
+  margin: auto;
+}
+
+.movie-title {
+  margin: auto;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--card-color);
+  color: var(--primary-color);
+  line-height: normal;
+  max-width: 300px;
+}
+
+.movie-sub-title {
+  font-size: 16px;
+  margin: auto;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  color: var(--primary-color);
+  padding: 8px 0;
+}
+
+#toprated {
+  width: 100%;
+  height: auto;
+  background: url(/src/assets/images/superhero/background.avif);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 0 0 60px;
+}
+
+#upcoming {
+  width: 100%;
+  height: auto;
+  background: url(/src/assets/images/horror/bg.avif);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 0 0 60px;
+}
+
+#footer {
+  width: 100%;
+  height: auto;
+}
+
+.footer {
+  background: var(--primary-color) !important;
+}
+
+.footer-title {
+  color: var(--card-color);
+  font-size: 36px;
+}
+
+.footer-title .footer-span {
+  color: var(--card-color);
+}
+/* End Footer */
+
+.btnList {
+  background: var(--primary-color) !important;
+  font-family: "Poppins", sans-serif !important;
+  box-shadow: none !important;
+  text-transform: capitalize !important;
+  transition: all 0.5s !important;
+  position: relative;
+  display: inline-block;
+  font-size: 14px !important;
+  padding: 13px 16px !important;
+  color: var(--card-color) !important;
+}
+
+.btnList:after {
+  content: "»";
+  position: absolute;
+  opacity: 0;
+  right: -20px;
+  transition: 0.5s;
+  font-size: 14px;
+}
+
+.btnList:hover {
+  padding-right: 24px !important;
+  padding-left: 8px !important;
+}
+
+.btnList:hover:after {
+  opacity: 1;
+  right: 10px;
+}
+
+/* Peaky Blinder Section */
+#peaky {
+  width: 100%;
+  height: auto;
+  background: var(--primary-color);
+}
+/* End Peaky Blinder Section */
+
+/* Video Embed */
+.video-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+
+.video-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.loader {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  width: 100%;
+  height: 100vh;
+}
+
+/* Search Comp */
+.search-movies {
+  right: 0;
+  z-index: 99;
+}
+
+.search-comp {
+  font-family: var(--font);
+  background-color: var(--primary-color);
+  color: var(--card-color);
+  /* max-width: 100%; */
+  max-width: 55%;
+}
+
+.img-search {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.text-search-title {
+  font-size: 18px;
+}
+
+@media screen and (max-width: 768px) {
+  .img-search {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  .text-search-title {
+    font-size: 16px;
+  }
+  .text-search {
+    font-size: 14px;
+  }
+  .text-rate {
+    font-size: 12px;
+  }
+}
+
+.text-search {
+  font-size: 16px;
+  color: #c3b5a6;
+}
+
+.text-rate {
+  font-size: 14px;
+}
+
+.select-movie {
+  color: var(--card-color);
+  /* width: 400px; */
+}
+
+.select-movie:hover {
+  color: var(--secondary-color);
+  background-color: var(--card-color);
+  transition: all 0.3s;
+}
+
+#detail-movie {
+  color: var(--card-color);
+  height: auto;
+  width: 100%;
+}
+
+#detail-movie::after {
+  display: flex;
+  content: "\a0";
+  height: 2px;
+  background-color: var(--primary-color);
+  width: 100% !important;
+  margin: 50px 0;
+}
+
+.bg-detail {
+  background-color: #2a2723;
+}
+
+.img-backdrop {
+  width: 100%;
+  max-height: 500px !important;
+  background-size: cover;
+  object-fit: cover;
+}
+
+.text-detail-movie-hero {
+  color: var(--card-color);
+}
+
+@media screen and (min-width: 120px) and (max-width: 768px) {
+  .img-backdrop {
+    max-height: 400px !important;
+    width: auto;
+    margin-top: 40px;
+  }
+  .text-detail-movie-hero h1 {
+    font-size: 20px;
+  }
+  .text-detail-movie-hero .text-detail-date {
+    font-size: 14px;
+  }
+  .text-detail-movie-hero .text-detail-play {
+    font-size: 14px;
+  }
+  .text-detail-movie-hero .text-detail-rating {
+    font-size: 12px;
+  }
+  .text-detail-movie-hero .text-detail-votes {
+    font-size: 12px;
+  }
+  .text-detail-movie-hero .text-detail-genres {
+    font-size: 12px;
+  }
+  .text-detail-movie-hero h3 {
+    margin-top: 10px !important;
+    font-size: 14px;
+  }
+  .text-detail-movie-hero .text-detail-overview {
+    font-size: 12px;
+  }
+}
+
+.divider {
+  /* background-color: #71695e; */
+  width: 100%;
+  border: dashed 1px #71695e;
+}
+
+.text-detail-play {
+  color: var(--primary-color);
+  background-color: var(--card-color);
+}
+
+.text-detail-play:hover {
+  color: #2a2723;
+  background-color: var(--secondary-color);
+  transition: 0.5s;
+}
+
+.text-detail-date {
+  color: var(--primary-color);
+  font-size: 20px;
+}
+
+.text-detail-genres {
+  color: var(--primary-color);
+}
+
+.text-detail-rating {
+  font-size: 16px;
+  background-color: var(--primary-color);
+  border-radius: 10px;
+}
+
+.text-detail-votes {
+  background-color: transparent;
+  border: 2px solid var(--primary-color) !important;
+  border-radius: 10px;
+}
+
+.text-detail-overview {
+  color: var(--primary-color);
+  text-align: justify;
+  font-size: 18px;
+}
+
+.movie-rekomendasi:hover .overlay {
+  opacity: 0.6;
+  transition: all 0.5s;
+}
+
+.text-rekomendasi {
+  color: var(--secondary-color);
+}
+
+.arrow-slide-left {
+  height: auto;
+  padding: 10px 10px 10px 10px;
+  object-fit: cover;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  position: absolute;
+  z-index: 80;
+  transform: translateY(-50%);
+  top: 40%;
+  left: -20px;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.arrow-slide-left:hover {
+  transition: 0.5s;
+  background-color: var(--card-color);
+}
+
+.arrow-slide-right {
+  height: auto;
+  padding: 10px 10px 10px 10px;
+  object-fit: cover;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  position: absolute;
+  z-index: 80;
+  transform: translateY(-50%);
+  top: 40%;
+  right: -20px;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.arrow-slide-right:hover {
+  transition: 0.5s;
+  background-color: var(--card-color);
+}
+
+.bg-category {
+  background-color: #2a2723;
+  padding: 80px 0 0;
+}
+/* 
+#hero-detail {
+  position: relative;
+  color: var(--card-color);
+  min-height: 120vh;
+  overflow: hidden;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+} */
+
+.bg-trailer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  object-fit: cover;
+  filter: blur(4px);
+}
+
+.bg-opacity {
+  /* background-color: #000; */
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7));
+  /* opacity: 0.8; */
+  position: absolute;
+  width: 100%;
+  min-height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  /* filter: blur(4px); */
+}
+
+.container-youtube {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+/* .hero-detail-movie {
+  position: absolute;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  height: auto;
+} */
+
+.btn-close {
+  position: absolute;
+  z-index: 1000;
+  opacity: 0.1;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 10%;
+  right: 10%;
+  width: 12px !important;
+  height: 40px !important;
+  padding: 20px;
+  border-radius: 100% !important;
+  background-color: var(--secondary-color) !important;
+}
+
+.btn-close:hover {
+  background-color: var(--card-color) !important;
+  top: 11%;
+  transition: 0.5s;
+}
+
+.sr-only {
+  color: var(--card-color) !important;
+}
+
+.page-item.active .page-link {
+  background-color: var(--card-color) !important;
+  border-color: var(--card-color) !important;
+  color: var(--primary-color) !important;
+  box-shadow: none !important;
+}
+
+.page-item .page-link {
+  color: var(--card-color) !important;
+  background-color: var(--primary-color) !important;
+  font-family: var(--font-family) !important;
+}
+
+.page-item .page-link:hover {
+  color: var(--primary-color) !important;
+  background-color: var(--card-color) !important;
+}
+
+.page-item .disabled {
+  color: var(--card-color) !important;
+  background-color: var(--primary-color) !important;
+}
