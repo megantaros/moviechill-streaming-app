@@ -52,7 +52,11 @@ const Popular = () => {
                     className="image"
                   />
                   <div className="overlay">
-                    <img src={playButton} className="img-overlay" />
+                    <img
+                      src={playButton}
+                      className="img-overlay"
+                      alt="Play Button"
+                    />
                   </div>
                 </div>
                 <div className="movie-title px-2">

@@ -1,8 +1,7 @@
 import axios from "axios";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Oval } from "react-loader-spinner";
 import { Link, useParams } from "react-router-dom";
-// import FooterSection from "./FooterSection";
 import SlideMovie from "../components/SlideMovie";
 import "../style/landingPages.css";
 import YouTube from "react-youtube";
@@ -96,13 +95,13 @@ const DetailMoviePage = () => {
             className="position-relative d-flex justify-content-center align-items-center w-100 h-100 py-5"
             style={styleBackground}
           >
-            {/* <div className="bg-opacity"></div> */}
             <div className="container container-hero-detail">
               <div className="row">
                 <div className="col-lg-3 col-12 d-flex py-3 justify-content-center">
                   <img
                     src={`${process.env.REACT_APP_IMG_PATH}/${detail?.poster_path}`}
                     className="img-backdrop my-3"
+                    alt="Poster Movie"
                   />
                 </div>
                 <div className="col-lg-9 col-12 d-flex align-items-center">

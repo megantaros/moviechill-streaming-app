@@ -1,15 +1,8 @@
-import {
-  Container,
-  Navbar,
-  Form,
-  Button,
-  Nav,
-  NavDropdown,
-} from "react-bootstrap";
+import { Navbar, Form, Button, Nav, NavDropdown } from "react-bootstrap";
 import "../style/landingPages.css";
-import { Link, useLocation, useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { searchMovie, getMovieList } from "../config/api";
+import { Link, useLocation } from "react-router-dom";
+import { useState } from "react";
+import { searchMovie } from "../config/api";
 import "../style/landingPages.css";
 
 const NavigationBar = () => {
@@ -31,6 +24,7 @@ const NavigationBar = () => {
                   <img
                     src={`${process.env.REACT_APP_IMG_PATH}/${movies.poster_path}`}
                     className="img-search"
+                    alt="Movie"
                   />
                 </div>
                 <div className="col-8 m-0 py-2">

@@ -124,6 +124,7 @@ const SlideMovie = () => {
                     <img
                       src={`${process.env.REACT_APP_IMG_PATH}/${data?.poster_path}`}
                       className="w-100"
+                      alt="Poster Movie"
                     />
                     <div className="overlay">
                       <svg
