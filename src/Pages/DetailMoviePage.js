@@ -37,7 +37,7 @@ const DetailMoviePage = () => {
         );
         setVideos(trailer);
       });
-  }, [params?.movieId, params]);
+  }, [params?.movieId, params, detail?.title]);
 
   // console.log(detail.backdrop_path);
 
