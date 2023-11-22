@@ -20,6 +20,9 @@ const DetailMoviePage = () => {
 
   useEffect(() => {
     const { movieId } = params;
+
+    document.title = `MovieChill | ${detail?.title}`;
+
     axios
       .get(`${process.env.REACT_APP_BASE_URL}/movie/${movieId}`, {
         params: {

@@ -12,6 +12,8 @@ const HomePage = () => {
   });
 
   useEffect(() => {
+    document.title = "MovieChill | Home";
+
     const fetchData = async () => {
       try {
         const { trending, topRated, upcoming } = await fetcherMovies();

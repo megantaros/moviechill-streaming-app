@@ -31,6 +31,8 @@ const CategoryPage = () => {
         break;
     }
 
+    document.title = `MovieChill | ${title}`;
+
     axios
       .get(
         `${process.env.REACT_APP_BASE_URL}/movie/${pathname}?language=en-US&page=${page}`,
