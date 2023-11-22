@@ -28,6 +28,7 @@ const NavigationBar = () => {
                   key={movies.id}
                   to={`/detail/${movies.id}`}
                   className="row select-movie m-0 p-0"
+                  onClick={() => setShow(false)}
                 >
                   <div className="col-3 m-0 py-2 overflow-hidden">
                     <img
@@ -127,7 +128,6 @@ const NavigationBar = () => {
                 aria-label="Search"
                 // onChange={({ target }) => search(target.value)}
                 onKeyUp={({ target }) => search(target.value)}
-                onBlur={() => setShow(false)}
               />
               <Button as={Link} className="navButton">
                 Cari
