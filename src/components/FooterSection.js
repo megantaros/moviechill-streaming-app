@@ -20,15 +20,6 @@ const FooterSection = () => {
         </div>
 
         <div>
-          {/* <a href="" className="me-4 text-reset">
-            <MDBIcon fab icon="facebook-f" />
-          </a>
-          <a href="" className="me-4 text-reset">
-            <MDBIcon fab icon="twitter" />
-          </a>
-          <a href="" className="me-4 text-reset">
-            <MDBIcon fab icon="google" />
-          </a> */}
           <a
             href="https://www.instagram.com/megantaros/"
             className="me-4 text-reset"
@@ -36,7 +27,7 @@ const FooterSection = () => {
             <MDBIcon fab icon="instagram" />
           </a>
           <a
-            href="https://www.linkedin.com/in/gita-megantara-928303228/"
+            href="https://www.linkedin.com/in/gita-megantara/"
             className="me-4 text-reset"
           >
             <MDBIcon fab icon="linkedin" />
@@ -61,25 +52,6 @@ const FooterSection = () => {
                 dan tahun.
               </p>
             </MDBCol>
-
-            {/* <MDBCol md="2" lg="2" xl="2" className="mx-auto mb-4">
-              <h6 className="text-uppercase fw-bold mb-4">Populer</h6>
-              <p>
-                <a href="#!" className="text-reset">
-                  Trending
-                </a>
-              </p>
-              <p>
-                <a href="#!" className="text-reset">
-                  Superhero
-                </a>
-              </p>
-              <p>
-                <a href="#!" className="text-reset">
-                  Horror
-                </a>
-              </p>
-            </MDBCol> */}
 
             <MDBCol md="3" lg="3" xl="3" className="mx-auto mb-4">
               <h6 className="text-uppercase fw-bold mb-4">Kategori</h6>
@@ -124,7 +96,7 @@ const FooterSection = () => {
       >
         © 2022 Copyright:
         <a href="/" className="text-reset fw-bold">
-          MovieChill
+          Megantaros
         </a>
       </div>
     </MDBFooter>

@@ -13,7 +13,7 @@ const Intro = () => {
   }, []);
 
   return (
-    <div>
+    <div className="myBg">
       <div className="intro" data-aos="fade-up">
         <Container className="text-white d-flex justify-content-center align-items-center">
           <Row>

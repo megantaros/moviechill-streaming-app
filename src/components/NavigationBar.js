@@ -9,62 +9,72 @@ const NavigationBar = () => {
   const location = useLocation();
   const [movies, setMovies] = useState([]);
   const [show, setShow] = useState(true);
+
+  function formattedDate(date) {
+    const d = new Date(date);
+    const year = d.getFullYear();
+
+    return `${year}`;
+  }
+
   const MovieList = () => {
     return (
       <div className="d-flex justify-content-end">
         <div className="search-comp d-relative">
-          {movies.map((movies) => {
-            return (
-              <Link
-                to={`/detail/${movies.id}`}
-                className="row select-movie m-0 p-0"
-                onClick={() => setShow(false)}
-              >
-                <div className="col-4 m-0 py-2 overflow-hidden">
-                  <img
-                    src={`${process.env.REACT_APP_IMG_PATH}/${movies.poster_path}`}
-                    className="img-search"
-                    alt="Movie"
-                  />
-                </div>
-                <div className="col-8 m-0 py-2">
-                  <h3 className="text-search-title">{movies.title}</h3>
-                  <div className="text-search">
-                    Release : {movies.release_date}
+          {movies
+            .map((movies) => {
+              return (
+                <Link
+                  key={movies.id}
+                  to={`/detail/${movies.id}`}
+                  className="row select-movie m-0 p-0"
+                >
+                  <div className="col-3 m-0 py-2 overflow-hidden">
+                    <img
+                      src={`${process.env.REACT_APP_IMG_PATH}/${movies.poster_path}`}
+                      className="img-search"
+                      alt="Movie"
+                    />
                   </div>
-                  <div>
-                    <span>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="14"
-                        height="14"
-                        fill="currentColor"
-                        class="bi bi-star-fill"
-                        viewBox="0 0 16 16"
-                      >
-                        <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                      </svg>
-                      <span className="mx-2 text-rate">
-                        {movies.vote_average}
+                  <div className="col-9 m-0 py-2">
+                    <h3 className="text-search-title">{movies.title}</h3>
+                    <div className="text-search">
+                      Release : {formattedDate(movies.release_date)}
+                    </div>
+                    <div>
+                      <span>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="14"
+                          height="14"
+                          fill="currentColor"
+                          className="bi bi-star-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                        </svg>
+                        <span className="mx-2 text-rate">
+                          {movies.vote_average}
+                        </span>
                       </span>
-                    </span>
+                    </div>
                   </div>
-                </div>
-              </Link>
-            );
-          })}
+                </Link>
+              );
+            })
+            .slice(0, 10)}
         </div>
       </div>
     );
   };
 
   const search = async (q) => {
-    if (q.length > 0) {
+    if (q.length >= 3) {
+      setShow(true);
       const query = await searchMovie(q);
       setMovies(query.results);
-      console.log({ query: query });
-      setShow(!show);
-    } else {
+    }
+    if (q.length === 0) {
       setShow(false);
     }
   };
@@ -89,8 +99,8 @@ const NavigationBar = () => {
               <Nav.Link
                 as={Link}
                 to={"/"}
-                exact
-                activeClassName="navLinkActive"
+                // exact={true}
+                // activeClassName="navLinkActive"
                 className={
                   location.pathname === "/" ? "navLinkActive" : "navLink"
                 }
@@ -101,7 +111,7 @@ const NavigationBar = () => {
                 <NavDropdown.Item as={Link} to={`/popular`}>
                   Popular
                 </NavDropdown.Item>
-                <NavDropdown.Item as={Link} to={`/toprated`}>
+                <NavDropdown.Item as={Link} to={`/top_rated`}>
                   Top Rated
                 </NavDropdown.Item>
                 <NavDropdown.Item as={Link} to={`/upcoming`}>
@@ -115,7 +125,9 @@ const NavigationBar = () => {
                 placeholder="Cari film disini..."
                 className="me-2"
                 aria-label="Search"
-                onChange={({ target }) => search(target.value)}
+                // onChange={({ target }) => search(target.value)}
+                onKeyUp={({ target }) => search(target.value)}
+                onBlur={() => setShow(false)}
               />
               <Button as={Link} className="navButton">
                 Cari

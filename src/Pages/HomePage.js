@@ -1,52 +1,40 @@
 import "../style/landingPages.css";
-import Intro from "../components/Intro";
-import { Oval } from "react-loader-spinner";
 import { useState, useEffect } from "react";
-import TopRated from "../components/TopRated";
-import Coming from "../components/Upcoming";
-import Popular from "../components/Popular";
+import Intro from "../components/Intro";
+import Section from "../components/Section";
+import fetcherMovies from "../config/fetcher";
 
 const HomePage = () => {
-  const [loading, setLoading] = useState(false);
+  const [movies, setMovies] = useState({
+    trending: [],
+    topRated: [],
+    upcoming: [],
+  });
+
   useEffect(() => {
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 800);
+    const fetchData = async () => {
+      try {
+        const { trending, topRated, upcoming } = await fetcherMovies();
+        setMovies({
+          trending,
+          topRated,
+          upcoming,
+        });
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData();
   }, []);
 
   return (
-    <>
-      {loading ? (
-        <Oval
-          height={80}
-          width={80}
-          color="#f4eae0"
-          wrapperStyle={{}}
-          wrapperClass="loader"
-          visible={true}
-          ariaLabel="oval-loading"
-          secondaryColor="#c3b5a6"
-          strokeWidth={5}
-          strokeWidthSecondary={5}
-        />
-      ) : (
-        <div>
-          <div className="myBg">
-            <Intro />
-          </div>
-          <section id="popular">
-            <Popular />
-          </section>
-          <section id="toprated">
-            <TopRated />
-          </section>
-          <section id="upcoming">
-            <Coming />
-          </section>
-        </div>
-      )}
-    </>
+    <main>
+      <Intro />
+      <Section id="popular" title="Popular" data={movies.trending} />
+      <Section id="toprated" title="Top Rated" data={movies.topRated} />
+      <Section id="upcoming" title="Upcoming" data={movies.upcoming} />
+    </main>
   );
 };
 

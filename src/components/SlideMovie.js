@@ -27,11 +27,11 @@ const SlideMovie = () => {
                 width="30"
                 height="30"
                 fill="currentColor"
-                class="bi bi-chevron-right"
+                className="bi bi-chevron-right"
                 viewBox="0 0 16 16"
               >
                 <path
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
                 />
               </svg>
@@ -58,11 +58,11 @@ const SlideMovie = () => {
                 width="30"
                 height="30"
                 fill="currentColor"
-                class="bi bi-chevron-left"
+                className="bi bi-chevron-left"
                 viewBox="0 0 16 16"
               >
                 <path
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
                 />
               </svg>
@@ -115,7 +115,7 @@ const SlideMovie = () => {
         <Slider {...settings}>
           {movies.map((data) => {
             return (
-              <div className="pe-lg-3 pe-md-3 pe-2">
+              <div key={data?.id} className="pe-lg-3 pe-md-3 pe-2">
                 <Link to={`/detail/${data?.id}`}>
                   <div className="movie-rekomendasi position-relative overflow-hidden ">
                     <div className="top-left-text" style={{ zIndex: 99 }}>
@@ -132,7 +132,7 @@ const SlideMovie = () => {
                         width="50"
                         height="50"
                         fill="currentColor"
-                        class="bi  bi-play-circle-fill img-overlay"
+                        className="bi bi-play-circle-fill img-overlay"
                         viewBox="0 0 16 16"
                       >
                         <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z" />
